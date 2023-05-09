@@ -1,0 +1,109 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Almarai&family=DM+Serif+Text&family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<title>Q4 Exercise 5</title>
+	<style type="text/css">
+		.container1{
+			background-color: D98481;
+			text-align: center;
+		}
+		body{
+			background-color: EECF93;
+		}
+		h1, h2{
+			font-family: Abril Fatface;
+		}
+		p{
+			font-family: Almarai;
+		}
+		.me{
+			border-style: dashed;
+		}
+	</style>
+</head>
+<body>
+	<br>
+	<br>
+	<div class="container text-justify" >
+	<h1>The Ohm's Law Equation 🔬</h1>
+	<i><p id="date"></p></i>
+	<br>
+	<p>Ohm's Law describes the way current flows through a material when different levels of voltage are applied. Some materials like electrical wires present little resistance to the current flow and this type of material is called a conductor. Hence if this conductor is placed directly across a battery for example, a lot of current would flow. In other instances another material may impede the flow of current, but still allow some though. In electrical circuits, these components are often called resistors. Yet other materials let virtually no current though and these materials are called insulators.</p>
+	<img src="https://www.electronics-notes.com/images/ohms-law-circuit-illustration-01.svg" width="400" class="me"><br>
+	<br>
+
+	<p>Ohm’s principal discovery was that the amount of electric current through a metal conductor in a circuit is directly proportional to the voltage impressed across it, for any given temperature. Ohm expressed his discovery in the form of a simple equation, describing how voltage, current, and resistance interrelate: ohms law equation. In this algebraic expression, voltage (E) is equal to current (I) multiplied by resistance (R). Using algebra techniques, we can manipulate this equation into two variations, solving for I and R, respectively:ohms equation current resistance.</p>
+	<img src="https://www.allaboutcircuits.com/uploads/articles/units-measurement-electrical-current.png" width="400" class="me"><br>
+	<br>
+
+	<p>In this first example, we will calculate the amount of current (I) in a circuit, given values of voltage (E) and resistance (R):</p>
+
+	<div class="row">
+		<div class="col-6 mt-5">
+			🪫 <u>Enter Voltage(E)</u>: <input type="text" id="V"><br><br>
+			🔋 <u>Enter Resistance(R)</u>: <input type="text" id="R"><br><br>
+			<input type="Submit" value="COMPUTE" class="btn btn-primary" onclick="Calculate()">
+			<p id="OUTPUT"></p>
+
+		</div>
+		<div class="col-6">	
+			<img src="https://www.allaboutcircuits.com/uploads/articles/current-flow-ER.jpg" id="figure 2" class="me"><br>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="container1">
+	<br>
+	<audio id="audio" src="electric-hum.mp3"></audio>
+	<h2>Have you ever wondered what makes a light bulb light up? 💭</h2>
+	<br>
+	<p>When a light bulb connects to an electrical power supply, an electrical current flows from one metal contact to the other. As the current travels through the wires and the filament, the filament heats up to the point where it begins to emit photons, which are small packets of visible light.</p>
+	<br>
+	<button class="btn btn-success" onmouseover="On()" onmouseout="Off()">TURN ON LIGHT</button>
+	<img src="turnoff.png" id="bulb" width="180">
+	<br>
+	<br>
+	</div>
+
+	<script type="text/javascript">
+		const DT = new Date();//constant declaration for date object
+		document.getElementById('date').innerHTML = DT;
+	</script>
+
+	<script type="text/javascript">
+		function Calculate(){
+			let V = document.getElementById('V').value;
+			let R = document.getElementById('R').value;
+			let Current = V/R;
+			document.getElementById('OUTPUT').innerHTML = "The computed Current(I) is : " + Current;
+			}
+			function On(){
+				document.getElementById('bulb').src = "switchON.PNG"
+				document.getElementById('audio').play();
+			}
+
+			function Off(){
+				document.getElementById('bulb').src = "turnoff.png"
+				document.getElementById('audio').pause();
+			}
+
+	</script>
+
+
+	<br><mark>SOURCES:</mark><br>
+	• <i><u><a href="https://www.electronics-notes.com/articles/basic_concepts/resistance/what-is-ohms-law-formula-equation.php">Understanding Ohm's Law</a></u></i><br>
+
+	• <i><u><a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">Ohm’s Law - How Voltage, Current, and Resistance Relate</a></u></i><br>
+
+	• <i><u><a href="https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up">What Makes a Light Bulb Light Up?</a></u></i>
+	<br>
+	<br>
+
+	</div>
+</body>
+</html>
